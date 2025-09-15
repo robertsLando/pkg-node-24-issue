@@ -4,9 +4,10 @@
     "main": "dist/server.js",
     "bin": "dist/server.js",
     "scripts": {
-        "start": "node dist/server.js",
+        "start": "DEBUG_PKG=2 ./pkg-node-24-demo",
         "build": "tsc",
-        "pkg": "PKG_NODE_PATH=./node-v24.7.0-linux-x64 pkg . --no-native-build -t node22-linux-x64"
+        "pkg": "PKG_NODE_PATH=./node-v24.7.0-linux-x64 pkg . --no-native-build -d -t node22-linux-x64",
+        "test": "npm run build && npm run pkg && npm run start"
     },
     "pkg": {
         "assets": [
