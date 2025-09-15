@@ -1,0 +1,32 @@
+{
+    "name": "pkg-node-24-demo",
+    "version": "1.0.0",
+    "main": "dist/server.js",
+    "bin": "dist/server.js",
+    "scripts": {
+        "start": "node dist/server.js",
+        "build": "tsc",
+        "pkg": "PKG_NODE_PATH=./node-v24.7.0-linux-x64 pkg . --no-native-build -t node22-linux-x64"
+    },
+    "pkg": {
+        "assets": [
+            "./node_modules/@img/**",
+            "./node_modules/canvas/build/Release/**"
+        ]
+    },
+    "dependencies": {
+        "canvas": "^3.2.0",
+        "class-validator": "^0.14.2",
+        "express": "^4.21.2",
+        "reflect-metadata": "^0.2.2",
+        "sharp": "^0.34.3"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.3",
+        "@types/node": "^24.4.0",
+        "@yao-pkg/pkg": "^6.6.0",
+        "esbuild": "^0.25.9",
+        "esbuild-register": "^3.6.0",
+        "typescript": "^5.9.2"
+    }
+}
